@@ -1,0 +1,74 @@
+
+body{
+margin: 0;
+padding: 0;
+background: url(https://farm9.static.flickr.com/8519/29655983081_a270ca0c88_b.jpg);
+background-size: cover;
+background-position:center;
+font-family: sans-serif;
+}
+#MAIL{width: 363px;
+height: 30px;
+padding: 5px;
+border: gray;
+border-radius: 3px;}
+#PASS{
+WIDTH:310PX;
+HEIGHT:30PX;
+BORDER:gray;
+BORDER-RADIUS:3PX;
+PADDING:5PX;
+}
+#hem1{
+left:500px;
+top:10px;
+font-family:verdana;
+font-size:35px;
+color:black;
+font-weight:bold;
+height:100px;
+width:600px;
+}
+.cs{
+position:absolute;
+left:0px;
+margin-top:15px;
+width:100%;
+height:645px;
+}
+.loginbox{
+width: 300px;
+height: 150px;
+background: black;
+color: white;
+top: 20%;
+left: 20%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding:8px;
+}
+.loginbox1{
+width: 300px;
+height: 150px;
+background: black;
+color: white;
+top: 20%;
+left: 70%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding:8px;
+}
+.loginbox2{
+width: 300px;
+height: 150px;
+background: black;
+color: white;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding:8px;
+}

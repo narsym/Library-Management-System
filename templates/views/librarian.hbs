@@ -1,0 +1,57 @@
+<html name = "whole">
+	<head>
+		<title>Librarian Page</title>
+	</head>
+	<body>
+		<h2>Add book</h2>
+		<form action="/librarian" method = "POST" name = "add book">
+		<input type="text" name = "book" placeholder="book name"><br><br>
+		<input type="text" name = "author" placeholder="author name"><br><br>
+		<input type="text" name = "genre" placeholder="genre name"><br><br>
+		<input type="submit" name = "submit" value = "submit">
+		</form>
+
+		<h2>Remove Book</h2>
+		<input type="text" id='inp' name = "book" placeholder="book name"><br><br>
+		<button onclick="removeBook()">remove</button>
+
+		<h2>Add Student</h2>
+		<button value = "register"><a href="./register">Add Student</a></button><br><br>
+
+		<h2>Remove Student</h2>
+		<input type="text" id = "studentid" placeholder = "studentid"><br><br>
+		<button onclick = "removeStudent()">Remove student</button>
+		
+		<script>
+			removeBook = async (evt) =>{
+				var data = document.getElementById('inp').value;
+				var res = await fetch('http://localhost:3000/lib/'+data, {
+					method: 'DELETE'
+				});
+				if(res.status == 200)
+				{
+					alert('Book successfully deleted!');
+				}
+				else{
+					alert('Book is not deleted');
+				}
+				console.log(res);
+			}
+
+			const removeStudent = async (evt) =>{
+				var data = document.getElementById("studentid").value;
+				var res = await fetch(`http://localhost:3000/librarian/removeStudent/${data}`, {
+					method: 'DELETE'
+				});
+				if(res.status == 200)
+				{
+					alert('Book successfully deleted!');
+				}
+				else{
+					alert('Book is not deleted');
+				}
+				console.log(res);
+			}
+		</script>
+	</body>
+</html>

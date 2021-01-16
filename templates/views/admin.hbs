@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Admin Page</title>
+	</head>
+	<body>
+		<h2>Add librarian</h2><br><br>
+		<button><a href="/register">Add librarian</a></button><br><br>
+		<h2>Remove librarian</h2>
+		<input type="text" id = "removeLib" placeholder="Librarian Id"><br><br>
+		<button onclick = "removeLibrarian()">Remove</button>
+		<script>
+			const removeLibrarian = async(evt) => {
+				var data = document.getElementById('removeLib').value;
+				var res = await fetch(`http://localhost:3000/admin/removeLibrarian/${data}`, {
+					method: 'DELETE'
+				})
+				if(res.status == 200) {
+					alert("book deleted");
+				}else {
+					alert("book is not delted");
+				}
+			}
+		</script>
+	</body>
+</html>

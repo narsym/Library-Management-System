@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Student Page</title>
+    </head>
+    <body>
+        Student page
+        <h2>ID</h2>
+        <p name = "studentid">{{studentid}}</p>
+        <h2>Borrow Book</h2>
+        <form action="/student" method = "POST">
+        <input type="text" name = "book" placeholder="bookname"><br><br>
+        <input type="text" name = "studentid" placeholder = "enter student id for confirmation"><br><br>
+        <input type="submit" value = "borrow">
+        </form>
+
+        <h2>Return Book</h2>
+        <input type="text" id = "rmbook" placeholder="bookname"><br><br>
+        <input type="submit" value = "return" onclick="returnBook()">
+        <script>
+			const returnBook = async(evt) => {
+                var data = document.getElementById('rmbook').value;
+				var res = await fetch(`http://localhost:3000/student/removeBook/${data}`, {
+					method: 'DELETE'
+				})
+				if(res.status == 200) {
+					alert("book deleted");
+				}else {
+					alert("book is not delted");
+				}
+            }
+		</script>
+    </body>
+</html>
